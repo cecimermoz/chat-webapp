@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import { ImgHeader, TextHeader, WindowHeaderStyled } from './ChatWindowHeader.style';
 
 const ChatWindowHeader = ({chatInfo}) => {
-    const {IMAGE, NAME, AREA} = chatInfo;
-    //console.log(chatInfo)
+    const { selectedRoom } = useContext(ChatRoomsContext)
+    const {IMAGE, NAME, AREA} = selectedRoom;
 
     return (
         <WindowHeaderStyled>

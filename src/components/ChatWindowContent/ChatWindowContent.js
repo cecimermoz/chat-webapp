@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import ChatBox from '../ChatBox';
 import { ChatBoxesContainer } from './ChatWindowContent.style';
 
 const ChatWindowContent = (props) => {
-    const { messages, ownerImg, guestImg } = props;
+    const { selectedRoom } = useContext(ChatRoomsContext)
+    const {GUEST_IMAGE, MESSAGES, IMAGE} = selectedRoom;
 
     return (
         <ChatBoxesContainer>
             {
-                messages?.map( msg => {
+                MESSAGES?.map( msg => {
                     let isOwnerMsg = msg.IS_OWNER_MSG;
-                    let dinamicPic = isOwnerMsg ? ownerImg : guestImg;
+                    let dinamicPic = isOwnerMsg ? IMAGE : GUEST_IMAGE;
 
                     return  <ChatBox 
                                 key={msg.ID}

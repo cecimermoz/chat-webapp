@@ -1,20 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import ChatForm from '../ChatForm';
 import ChatWindowContent from '../ChatWindowContent';
 import ChatWindowHeader from '../ChatWindowHeader';
 import { ChatWindowContainer } from './ChatWindow.style';
 
-const ChatWindow = ({chatInfo}) => {
-    const {GUEST_IMAGE, MESSAGES, IMAGE} = chatInfo
+const ChatWindow = () => {    
 
     return (
         <ChatWindowContainer>
-            <ChatWindowHeader chatInfo={chatInfo}/>
-            <ChatWindowContent 
-                messages={MESSAGES}
-                ownerImg={IMAGE}
-                guestImg={GUEST_IMAGE}
-            />
+            <ChatWindowHeader/>
+            <ChatWindowContent />
             <ChatForm />
         </ChatWindowContainer>
     );

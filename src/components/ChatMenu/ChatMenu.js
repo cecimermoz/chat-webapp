@@ -5,8 +5,8 @@ import { ChatMenuContainer } from './ChatMenu.style';
 import CreateNewChatRoomBtn from '../CreateNewChatRoomBtn';
 import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 
-const ChatMenu = ({chatRooms}) => {
-    const { selectedRoom, setSelectedRoom } = useContext(ChatRoomsContext)
+const ChatMenu = () => {
+    const { rooms, selectedRoom, setSelectedRoom } = useContext(ChatRoomsContext)
     const createNewChat = () => {
         alert('New chat has been created')
     };
@@ -19,7 +19,7 @@ const ChatMenu = ({chatRooms}) => {
         <ChatMenuContainer>
             <ChatMenuHeader />
             {
-                chatRooms.map( (room,i) => {
+                rooms?.map( (room,i) => {
                     let { NAME, IMAGE, MESSAGES } = room;
                         let isTheSelectedOne = selectedRoom.OWNER_ID === room.OWNER_ID;
                         let lastMsg = MESSAGES[MESSAGES.length - 1];             
