@@ -1,33 +1,21 @@
-import React, { useState } from 'react';
-import { FETCHED_DATA } from '../../models/sessionChats';
+import React, { useContext, useState } from 'react';
 import ChatMenu from '../ChatMenu';
 import ChatWindow from '../ChatWindow';
 import { Container } from './WebAppContainer.style';
-
-const Context = React.createContext(FETCHED_DATA);
+import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 
 const WebAppContainer = () => {
-    const [actualChat, setActualChat] = useState({})
+    const {rooms} = useContext(ChatRoomsContext);
+    //console.log('rrooomm', rooms)
 
     return (
         <Container>
-            <Context.Consumer>
-                {
-                    value => {
-                        setActualChat(value.CHAT_ROOMS[1])
-                        return (
-                            <>
-                                <ChatMenu 
-                                    chatRooms={value.CHAT_ROOMS}
-                                />
-                                <ChatWindow 
-                                    chatInfo={actualChat}
-                                />
-                            </>
-                        )
-                    }
-                }
-            </Context.Consumer>
+            <ChatMenu 
+                chatRooms={rooms}
+            />
+            <ChatWindow 
+                chatInfo={rooms[1]}
+            />
         </Container>
     );
 }

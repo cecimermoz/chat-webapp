@@ -3,7 +3,7 @@ import { ImgHeader, TextHeader, WindowHeaderStyled } from './ChatWindowHeader.st
 
 const ChatWindowHeader = ({chatInfo}) => {
     const {IMAGE, NAME, AREA} = chatInfo;
-    console.log(chatInfo)
+    //console.log(chatInfo)
 
     return (
         <WindowHeaderStyled>

@@ -1,14 +1,13 @@
 import React from "react";
 import Webappcontainer from "./components/WebAppContainer";
-import { FETCHED_DATA } from "./models/sessionChats";
+import { Context } from "./models/ChatRoomsContext";
 
 function App() {
-  const Context = React.createContext(FETCHED_DATA);
 
   return (
-    <Context.Provider value={FETCHED_DATA} >
+    <Context >
       <Webappcontainer />
-    </Context.Provider>
+    </Context>
   );
 }
 
