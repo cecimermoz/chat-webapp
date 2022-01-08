@@ -12,4 +12,5 @@ code {
 #root{
   display: flex;
   height: 100vh;
+  background-color: rgba(25,26,30,0.8);
 }
