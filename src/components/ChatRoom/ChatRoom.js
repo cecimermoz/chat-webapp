@@ -3,8 +3,14 @@ import { ChatRoomContainer, ChatRoomInfo, ChatRoomImg, MsgTimeStyled, OwnerNameS
 
 const ChatRoom = (props) => {
     const { ownerImg, ownerName, lastMsg, msgTime, selected } = props;
+    const selectChatRoom = () =>{
+        console.log('hi')
+    }
     return (
-        <ChatRoomContainer className={selected && 'chat-selected'}>
+        <ChatRoomContainer
+            className={selected && 'chat-selected'}
+            onClick={selectChatRoom}
+        >
             <ChatRoomImg src={ownerImg}/>
             <ChatRoomInfo>
                 <OwnerNameStyled>{ownerName}</OwnerNameStyled>

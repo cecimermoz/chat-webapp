@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-const ChatRoomContainer = styled.div`
+const ChatRoomContainer = styled.a`
     color: #fff;
+    cursor: pointer;
     padding: 15px 10px 15px 15px;
     display: flex;
     align-items: center;
     border-right: 5px solid transparent;
-    &.chat-selected{
-        border: 1px solid rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.8);
+    &.chat-selected,
+    &:hover{
         background: rgba(255,255,255,0.15);
         border-right: 5px solid #ff0000;
     }
@@ -15,7 +17,7 @@ const ChatRoomContainer = styled.div`
 const ChatRoomImg = styled.img`
     color: #fff;
     border-radius: 100%;
-    width: 60px;
+    width: 55px;
     margin-right: 15px;
 `;
 const ChatRoomInfo = styled.span`
