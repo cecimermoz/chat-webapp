@@ -16,7 +16,7 @@ const ChatRoom = (props) => {
                 <OwnerNameStyled>{ownerName}</OwnerNameStyled>
                 <LastMsgStyled>{lastMsg}</LastMsgStyled>
             </ChatRoomInfo>
-            <MsgTimeStyled>{msgTime}</MsgTimeStyled>
+            <MsgTimeStyled>{`${msgTime} AM`}</MsgTimeStyled>
         </ChatRoomContainer>
     );
 }

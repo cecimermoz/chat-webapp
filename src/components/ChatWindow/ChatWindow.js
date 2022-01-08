@@ -3,7 +3,7 @@ import ChatWindowHeader from '../ChatWindowHeader';
 import { ChatWindowContainer } from './ChatWindow.style';
 
 const ChatWindow = ({chatInfo}) => {
-    console.log('chatInfo', chatInfo)
+    //console.log('chatInfo', chatInfo)
     return (
         <ChatWindowContainer>
             <ChatWindowHeader />

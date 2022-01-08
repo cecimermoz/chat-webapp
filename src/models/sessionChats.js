@@ -10,8 +10,8 @@ export const FETCHED_DATA = {
             "OWNER_ID": "ow1",
             "NAME": "Luciana Gutierrez", 
             "AREA": "Human Resources", 
-            "IMAGE": {owner1},
-            "GUEST_IMAGE": {owner4}, 
+            "IMAGE": owner1,
+            "GUEST_IMAGE": owner4,
             "MESSAGES": [
                 {
                     "ID": "ms1", 
@@ -31,8 +31,8 @@ export const FETCHED_DATA = {
             "OWNER_ID": "ow2",
             "NAME": "Micaela Alvarez", 
             "AREA": "Marketing Manager", 
-            "IMAGE": {owner2},
-            "GUEST_IMAGE": {owner4}, 
+            "IMAGE": owner2,
+            "GUEST_IMAGE": owner4,
             "MESSAGES": [
                 {
                     "ID": "ms1", 
@@ -58,8 +58,8 @@ export const FETCHED_DATA = {
             "OWNER_ID": "ow3",
             "NAME": "Manuel Hoffmann", 
             "AREA": "Business Analyst", 
-            "IMAGE": {owner3},
-            "GUEST_IMAGE": {owner4}, 
+            "IMAGE": owner3,
+            "GUEST_IMAGE": owner4,
             "MESSAGES": [
                 {
                     "ID": "ms1", 
