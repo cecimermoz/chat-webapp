@@ -1,12 +1,18 @@
 import React from 'react';
-import WindowHeader from '../WindowHeader/WindowHeader';
+import { ImgHeader, TextHeader, WindowHeaderStyled } from './ChatWindowHeader.style';
 
 const ChatWindowHeader = ({chatInfo}) => {
     const {IMAGE, NAME, AREA} = chatInfo;
     console.log(chatInfo)
 
     return (
-        <WindowHeader area={AREA} name={NAME} img={IMAGE}/>
+        <WindowHeaderStyled>
+            <ImgHeader><img src={IMAGE} alt={NAME}/></ImgHeader>
+            <TextHeader>
+                <p>{NAME}</p>
+                <p>{AREA}</p>
+            </TextHeader>
+        </WindowHeaderStyled>
     );
 }
 
