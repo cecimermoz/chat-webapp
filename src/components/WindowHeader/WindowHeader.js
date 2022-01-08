@@ -1,10 +1,17 @@
 import React from 'react';
+import { ImgHeader, TextHeader, WindowHeaderStyled } from './WindowHeader.style';
 
-const WindowHeader = () => {
+const WindowHeader = (props) => {
+    const {img, name, area} = props;
+
     return (
-        <div>
-            header
-        </div>
+        <WindowHeaderStyled>
+            <ImgHeader><img src={img} alt={name}/></ImgHeader>
+            <TextHeader>
+                <p>{name}</p>
+                <p>{area}</p>
+            </TextHeader>
+        </WindowHeaderStyled>
     );
 }
 

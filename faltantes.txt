@@ -1,0 +1,4 @@
+- Responsividad
+- Readme
+- Create new Room
+- conexion websocket

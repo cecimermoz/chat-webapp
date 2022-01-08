@@ -1,5 +1,9 @@
-import styled from "styled-components";
+/*import styled from "styled-components";
 
-const ImgHeader = styled.span``;
+const ImgHeader = styled.span`
+    > img {
+        width: 20px;
+    }
+`;
 
-export { ImgHeader };
+export { ImgHeader };*/

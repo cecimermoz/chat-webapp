@@ -7,8 +7,8 @@ import { Container } from './WebAppContainer.style';
 const Context = React.createContext(FETCHED_DATA);
 
 const WebAppContainer = () => {
-    const [actualChat, setActualChat] = useState(null)
-    
+    const [actualChat, setActualChat] = useState({})
+
     return (
         <Container>
             <Context.Consumer>

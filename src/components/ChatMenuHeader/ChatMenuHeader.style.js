@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ChatMenuHeaderStyled = styled.div`
     color: #fff;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 22px;
     display: flex;
     align-items: center;
     vertical-align: middle;

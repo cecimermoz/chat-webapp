@@ -5,6 +5,7 @@ const Container = styled.div`
     width: 60vw;
     margin: auto;
     display: flex;
+    background-color: rgba(25,26,30,0.8);
 `;
 
 export { Container };
