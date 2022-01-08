@@ -1,0 +1,9 @@
+{
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "razor": "html",
+        "plaintext": "pug"
+    },
+    "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+}

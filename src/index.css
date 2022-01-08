@@ -14,3 +14,7 @@ code {
   height: 100vh;
   background-color: rgba(25,26,30,0.8);
 }
+
+*{
+  box-sizing: border-box;
+}
