@@ -1,44 +1,71 @@
 import styled from "styled-components";
 
 const ChatRoomContainer = styled.a`
-    color: #fff;
     cursor: pointer;
-    padding: 15px 10px 15px 15px;
+    padding: 10px 5px 10px 15px;
     display: flex;
     align-items: center;
-    border-right: 5px solid transparent;
-    border-bottom: 1px solid rgba(255,255,255,0.8);
+    border-right: 3px solid transparent;
+    min-height: 83px;
+    color: rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.4);
     &.chat-selected,
     &:hover{
         background: rgba(255,255,255,0.15);
-        border-right: 5px solid #ff0000;
+        border-right: 3px solid #ff0000;
+    }
+    @media (max-width: 650px) {
+        min-height: 65px;
+    }
+    @media (max-width: 600px) {
+        flex-direction: column;
+        justify-content: center;
+        min-height: auto;
+        padding: 10px;
     }
 `;
 const ChatRoomImg = styled.img`
     color: #fff;
     border-radius: 100%;
-    width: 55px;
-    margin-right: 15px;
+    width: 48px;
+    margin-right: 8px;
+    @media (max-width: 650px) {
+        width: 38px;
+    }
+    @media (max-width: 600px) {
+        width: 40px;
+        margin: 0;
+    }
 `;
 const ChatRoomInfo = styled.span`
     color: #fff;
     flex: 1;
 `;
 const OwnerNameStyled = styled.p`
+    color: #fff;
     font-weight: 600;
-    line-height: 0;
-    font-size: 14px;
+    font-size: 12px;
+    @media (max-width: 600px) {
+        display: none;
+    }
 `;
 const LastMsgStyled = styled.p`
     font-size: 10px;
     padding-right: 16px;
     line-height: 14px;
+    color: rgba(255,255,255,0.5);
+    @media (max-width: 650px) {
+        display: none;
+    }
 `;
 
 const MsgTimeStyled = styled.span`
-    font-size: 10px;
+    font-size: 8px;
     margin-top: 10px;
     align-self: stretch;
+    @media (max-width: 850px) {
+        display: none;
+    }
 `;
 
 

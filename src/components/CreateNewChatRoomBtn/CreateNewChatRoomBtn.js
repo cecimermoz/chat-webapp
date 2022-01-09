@@ -6,7 +6,7 @@ const CreateNewChatRoomBtn = (props) => {
     return (
         <CreateNewChatRoomBtnStyled onClick={btnCallback}>
             <span className="icon material-icons-outlined">add</span>
-            <span>Create New</span>
+            <span className="textBtn" >Create New</span>
         </CreateNewChatRoomBtnStyled>
     );
 }

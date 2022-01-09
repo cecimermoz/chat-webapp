@@ -3,7 +3,7 @@ import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import ChatBox from '../ChatBox';
 import { ChatBoxesContainer } from './ChatWindowContent.style';
 
-const ChatWindowContent = (props) => {
+const ChatWindowContent = () => {
     const { selectedRoom, selectedRoomMsgs } = useContext(ChatRoomsContext)
     const {GUEST_IMAGE, IMAGE} = selectedRoom;
 

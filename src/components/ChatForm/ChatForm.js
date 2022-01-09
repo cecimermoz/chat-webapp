@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { ChatRoomsContext } from '../../models/ChatRoomsContext';
-import { ChatFormStyled } from './ChatForm.style';
+import { BtnStyled, ChatFormStyled, InputStyled } from './ChatForm.style';
 
 const ChatForm = () => {
     const [msg, setMsg] = useState('');
@@ -12,12 +12,16 @@ const ChatForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         writeNerMsg(msg)
+        setMsg('')
     }
 
     return (
         <ChatFormStyled onSubmit={handleSubmit}>
-            <input type='text' placeholder='Type your message...' onChange={handleChange} />
-            <button type='submit'>send</button> 
+            <InputStyled type='text' placeholder='Type your message...' onChange={handleChange} value={msg} />
+            <BtnStyled type='submit'>
+                <span className="icon material-icons-outlined">send</span>
+                <span className="btnText">send</span>
+            </BtnStyled> 
         </ChatFormStyled>
     );
 }

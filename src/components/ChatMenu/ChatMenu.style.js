@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 const ChatMenuContainer = styled.div`
     background-color: #212121;
-    flex-basis: 35%;
+    flex-basis: 34%;
     display: flex;
     flex-direction: column;
+    @media (max-width: 600px) {
+        flex-basis: unset;
+    }
 `;
 
 const ChatRoomsContainer = styled.div`
     overflow: auto;
-    flex: 2.5;
 `;
 
 export { ChatMenuContainer, ChatRoomsContainer };

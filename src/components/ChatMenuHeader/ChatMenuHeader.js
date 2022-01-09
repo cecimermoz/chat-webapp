@@ -6,7 +6,7 @@ const ChatMenuHeader = () => {
     return (
         <ChatMenuHeaderStyled>
             <MenuHeaderImg src={logo} />
-            React Chat
+            <span>React Chat</span>
         </ChatMenuHeaderStyled>
     );
 }

@@ -14,7 +14,7 @@ const ChatBoxStyled = styled.div`
 
 const ChatBubble = styled.div`
     background-color: ${props => props.isOwnerMsg ? '#fff' : '#fceded'}; 
-    max-width: 250px;
+    max-width: 300px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     position: relative;
@@ -45,8 +45,8 @@ const TimeStyled = styled.span`
     left: ${props => props.isOwnerMsg ? '' : '5px'};
 `;
 const TextStyled = styled.span`
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 18px;
     color: #8c8c8c;
     font-weight: 500;
 `;
