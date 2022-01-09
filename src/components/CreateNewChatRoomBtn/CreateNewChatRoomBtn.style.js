@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const CreateNewChatRoomBtnStyled = styled.a`
     text-decoration: none;
+    flex: 1.5;
     cursor: pointer;
     border-top: none;
     border: 1px solid transparent;

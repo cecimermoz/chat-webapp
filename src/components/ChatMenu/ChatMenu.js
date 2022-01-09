@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
+import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import ChatMenuHeader from '../ChatMenuHeader';
 import ChatRoom from '../ChatRoom';
-import { ChatMenuContainer } from './ChatMenu.style';
 import CreateNewChatRoomBtn from '../CreateNewChatRoomBtn';
-import { ChatRoomsContext } from '../../models/ChatRoomsContext';
+import { ChatMenuContainer, ChatRoomsContainer } from './ChatMenu.style';
 
 const ChatMenu = () => {
     const { rooms, selectedRoom, setSelectedRoom } = useContext(ChatRoomsContext)
@@ -18,28 +18,28 @@ const ChatMenu = () => {
     return (
         <ChatMenuContainer>
             <ChatMenuHeader />
-            <div>
-            {
-                rooms?.map( (room,i) => {
-                    let { NAME, IMAGE, MESSAGES } = room;
-                        let isTheSelectedOne = selectedRoom.OWNER_ID === room.OWNER_ID;
-                        let lastMsg = MESSAGES[MESSAGES.length - 1];             
-                        return <ChatRoom
-                            key={`chat-room-num-${i}`}
-                            room={room}
-                            ownerImg={IMAGE}
-                            ownerName={NAME}
-                            lastMsg={lastMsg.TEXT}
-                            msgTime={lastMsg.TIME}
-                            selected={isTheSelectedOne}
-                            callback={selectOtherChatRoom}
-                        />
-                })
-            }
-            </div>
-            <CreateNewChatRoomBtn 
-                btnCallback={createNewChat}
-            />
+            <ChatRoomsContainer>
+                {
+                    rooms?.map( (room,i) => {
+                        let { NAME, IMAGE, MESSAGES } = room;
+                            let isTheSelectedOne = selectedRoom.OWNER_ID === room.OWNER_ID;
+                            let lastMsg = MESSAGES[MESSAGES.length - 1];             
+                            return <ChatRoom
+                                key={`chat-room-num-${i}`}
+                                room={room}
+                                ownerImg={IMAGE}
+                                ownerName={NAME}
+                                lastMsg={lastMsg.TEXT}
+                                msgTime={lastMsg.TIME}
+                                selected={isTheSelectedOne}
+                                callback={selectOtherChatRoom}
+                            />
+                    })
+                }
+                <CreateNewChatRoomBtn 
+                    btnCallback={createNewChat}
+                />
+            </ChatRoomsContainer>
         </ChatMenuContainer>
     );
 }
