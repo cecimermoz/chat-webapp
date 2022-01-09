@@ -8,7 +8,7 @@ const ChatBox = (props) => {
         <ChatBoxStyled isOwnerMsg={isOwnerMsg}>
             <img src={img} alt="message's sender" />
             <ChatBubble isOwnerMsg={isOwnerMsg}>
-                <TimeStyled isOwnerMsg={isOwnerMsg}>{`${time} AM`}</TimeStyled>
+                <TimeStyled isOwnerMsg={isOwnerMsg}>{time}</TimeStyled>
                 <TextStyled>{ text }</TextStyled>
             </ChatBubble>
         </ChatBoxStyled>

@@ -18,6 +18,7 @@ const ChatMenu = () => {
     return (
         <ChatMenuContainer>
             <ChatMenuHeader />
+            <div>
             {
                 rooms?.map( (room,i) => {
                     let { NAME, IMAGE, MESSAGES } = room;
@@ -35,6 +36,7 @@ const ChatMenu = () => {
                         />
                 })
             }
+            </div>
             <CreateNewChatRoomBtn 
                 btnCallback={createNewChat}
             />

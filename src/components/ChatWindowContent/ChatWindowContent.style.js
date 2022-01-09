@@ -6,6 +6,7 @@ const ChatBoxesContainer = styled.div`
     gap: 40px;
     padding: 40px 30px;
     flex: 1;
+    overflow: auto;
 `;
 
 export {ChatBoxesContainer};

@@ -15,13 +15,13 @@ export const FETCHED_DATA = {
             "MESSAGES": [
                 {
                     "ID": "ms1", 
-                    "TIME": "10:05", 
+                    "TIME": "10:05 AM", 
                     "IS_OWNER_MSG": false,
                     "TEXT": "Luciana, ya envié lo que pediste.", 
                 },
                 {
                     "ID": "ms2", 
-                    "TIME": "10:20", 
+                    "TIME": "10:20 AM", 
                     "IS_OWNER_MSG": true,
                     "TEXT": "Si tengo alguna otra novedad te comento. Gracias!", 
                 },
@@ -36,19 +36,19 @@ export const FETCHED_DATA = {
             "MESSAGES": [
                 {
                     "ID": "ms1", 
-                    "TIME": "9:45", 
+                    "TIME": "9:45 AM", 
                     "IS_OWNER_MSG": true,
                     "TEXT": "Hola John! Entre que horarios podrias tener hoy la meeting?", 
                 },
                 {
                     "ID": "ms2", 
-                    "TIME": "10:05", 
+                    "TIME": "10:05 AM", 
                     "IS_OWNER_MSG": false,
                     "TEXT": "Hola Micaela! Muy bien. Yo puedo de 10 a 17hs.", 
                 },
                 {
                     "ID": "ms3", 
-                    "TIME": "10:15", 
+                    "TIME": "10:15 AM", 
                     "IS_OWNER_MSG": true,
                     "TEXT": "Dale, agende la meeting para hoy a las 14hs.", 
                 }
@@ -63,13 +63,13 @@ export const FETCHED_DATA = {
             "MESSAGES": [
                 {
                     "ID": "ms1", 
-                    "TIME": "9:30", 
+                    "TIME": "9:30 AM", 
                     "IS_OWNER_MSG": false,
                     "TEXT": "Si, ya lo conseguí. Muchas gracias", 
                 },
                 {
                     "ID": "ms2", 
-                    "TIME": "9:37", 
+                    "TIME": "9:37 AM", 
                     "IS_OWNER_MSG": true,
                     "TEXT": "Gracias a vos!", 
                 }

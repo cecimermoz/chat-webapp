@@ -4,13 +4,13 @@ import ChatBox from '../ChatBox';
 import { ChatBoxesContainer } from './ChatWindowContent.style';
 
 const ChatWindowContent = (props) => {
-    const { selectedRoom } = useContext(ChatRoomsContext)
-    const {GUEST_IMAGE, MESSAGES, IMAGE} = selectedRoom;
+    const { selectedRoom, selectedRoomMsgs } = useContext(ChatRoomsContext)
+    const {GUEST_IMAGE, IMAGE} = selectedRoom;
 
     return (
         <ChatBoxesContainer>
             {
-                MESSAGES?.map( msg => {
+                selectedRoomMsgs?.map( msg => {
                     let isOwnerMsg = msg.IS_OWNER_MSG;
                     let dinamicPic = isOwnerMsg ? IMAGE : GUEST_IMAGE;
 

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import { ChatFormStyled } from './ChatForm.style';
 
 const ChatForm = () => {
     const [msg, setMsg] = useState('');
+    const { writeNerMsg } = useContext(ChatRoomsContext)
 
     const handleChange = (e) => {
         setMsg(e.target.value)
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(msg)
+        writeNerMsg(msg)
     }
 
     return (
