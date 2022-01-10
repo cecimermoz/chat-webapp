@@ -20,4 +20,6 @@ Please if you have any suggestions don't mind do it to my personal email: cecili
 Or check my [Linkdin](https://www.linkedin.com/in/ceciliamermoz/) for more details on my profile.
 
 ### Here I leave you a preview: 
+![preview](https://user-images.githubusercontent.com/42853540/148839370-93d31795-ff6f-4802-af39-ab84f1bed0d8.gif)
+
 
