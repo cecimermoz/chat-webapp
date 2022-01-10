@@ -1,4 +1,4 @@
-import React, {useState,createContext} from 'react';
+import React, { useState, createContext, useEffect} from 'react';
 import { FETCHED_DATA } from './sessionChats';
 import owner4 from "../assets/owner-4.png";
 export const ChatRoomsContext = createContext(FETCHED_DATA.CHAT_ROOMS);
@@ -22,8 +22,6 @@ export const Context = ({children}) => {
         .then(data => setOwner(data.results[0]))
         .catch(er => console.error(er));
     }
-    generateOwner();
-
 
     const selectRoomToView = (room) => {
         setSelectedRoom(room);
@@ -55,6 +53,10 @@ export const Context = ({children}) => {
         FETCHED_DATA.CHAT_ROOMS.push(newRoom)
         selectRoomToView(newRoom)
     }
+
+    useEffect(() => {
+        generateOwner();    
+    }, [])
 
     const values = {
         rooms,
