@@ -6,7 +6,7 @@ import CreateNewChatRoomBtn from '../CreateNewChatRoomBtn';
 import { ChatMenuContainer, ChatRoomsContainer } from './ChatMenu.style';
 
 const ChatMenu = () => {
-    const { rooms, selectedRoom, setSelectedRoom, createNewRoom } = useContext(ChatRoomsContext)
+    const { rooms, selectedRoom, selectRoomToView, createNewRoom } = useContext(ChatRoomsContext)
 
     return (
         <ChatMenuContainer>
@@ -26,7 +26,7 @@ const ChatMenu = () => {
                                 lastMsg={isNewRoom ? '' : lastMsg.TEXT}
                                 msgTime={isNewRoom ? '' : lastMsg.TIME}
                                 selected={isTheSelectedOne}
-                                callback={setSelectedRoom}
+                                selectRoomToView={selectRoomToView}
                             />
                     })
                 }

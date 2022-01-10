@@ -10,10 +10,12 @@ export const Context = ({children}) => {
     const [owner, setOwner] = useState(null)
 
     const generateID = (type) => `${type}${Math.random().toString(36).substring(2, 9)}`;
+    
     const getTime = () => {
         let now = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         return now;
     }
+
     const generateOwner = () => {
         fetch('https://randomuser.me/api')
         .then(result => result.json())
@@ -21,6 +23,13 @@ export const Context = ({children}) => {
         .catch(er => console.error(er));
     }
     generateOwner();
+
+
+    const selectRoomToView = (room) => {
+        setSelectedRoom(room);
+        setSelectedRoomMsgs(room.MESSAGES)
+    }
+
     const writeNerMsg = (msg) => {
         let newMsg = {
             "ID": generateID('msg_'), 
@@ -30,6 +39,7 @@ export const Context = ({children}) => {
         }
         setSelectedRoomMsgs([...selectedRoomMsgs, newMsg]);
     }
+
     const createNewRoom = (msg) => {
         generateOwner();
         let newRoom = {
@@ -41,11 +51,8 @@ export const Context = ({children}) => {
             "MESSAGES": []
         }
         setRooms([...rooms, newRoom]);
-        setSelectedRoom(newRoom);
-        selectedRoomMsgs([])
-
+        selectRoomToView(newRoom)
     }
-
 
     const values = {
         rooms,
@@ -53,6 +60,7 @@ export const Context = ({children}) => {
         selectedRoom,
         setSelectedRoom,
         selectedRoomMsgs,
+        selectRoomToView,
         createNewRoom,
         writeNerMsg,
     }
