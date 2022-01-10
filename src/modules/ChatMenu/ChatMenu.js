@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
+import ChatMenuHeader from '../../components/ChatMenuHeader';
+import ChatRoom from '../../components/ChatRoom';
+import CreateNewChatRoomBtn from '../../components/CreateNewChatRoomBtn';
 import { ChatRoomsContext } from '../../models/ChatRoomsContext';
-import ChatMenuHeader from '../ChatMenuHeader';
-import ChatRoom from '../ChatRoom';
-import CreateNewChatRoomBtn from '../CreateNewChatRoomBtn';
 import { ChatMenuContainer, ChatRoomsContainer } from './ChatMenu.style';
 
 const ChatMenu = () => {
@@ -31,9 +31,7 @@ const ChatMenu = () => {
                     })
                 }
             </ChatRoomsContainer>
-            <CreateNewChatRoomBtn 
-                btnCallback={createNewRoom}
-            />
+            <CreateNewChatRoomBtn btnCallback={createNewRoom} />
         </ChatMenuContainer>
     );
 }

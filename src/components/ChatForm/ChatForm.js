@@ -9,6 +9,7 @@ const ChatForm = () => {
     const handleChange = (e) => {
         setMsg(e.target.value)
     }
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         writeNerMsg(msg)
@@ -17,7 +18,12 @@ const ChatForm = () => {
 
     return (
         <ChatFormStyled onSubmit={handleSubmit}>
-            <InputStyled type='text' placeholder='Type your message...' onChange={handleChange} value={msg} />
+            <InputStyled
+                type='text'
+                placeholder='Type your message...'
+                onChange={handleChange}
+                value={msg}
+            />
             <BtnStyled type='submit'>
                 <span className="icon material-icons-outlined">send</span>
                 <span className="btnText">send</span>

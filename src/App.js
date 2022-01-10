@@ -1,12 +1,12 @@
 import React from "react";
-import Webappcontainer from "./components/WebAppContainer";
 import { Context } from "./models/ChatRoomsContext";
+import WebAppContainer from "./modules/WebAppContainer/WebAppContainer";
 
 function App() {
 
   return (
     <Context >
-      <Webappcontainer />
+      <WebAppContainer />
     </Context>
   );
 }

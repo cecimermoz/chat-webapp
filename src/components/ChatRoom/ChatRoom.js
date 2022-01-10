@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChatRoomContainer, ChatRoomInfo, ChatRoomImg, MsgTimeStyled, OwnerNameStyled, LastMsgStyled} from './ChatRoom.style';
+import { ChatRoomContainer, ChatRoomImg, ChatRoomInfo, LastMsgStyled, MsgTimeStyled, OwnerNameStyled } from './ChatRoom.style';
 
 const ChatRoom = (props) => {
     const { ownerImg, ownerName, lastMsg, msgTime, selected, selectRoomToView, room } = props;
@@ -7,8 +7,7 @@ const ChatRoom = (props) => {
     return (
         <ChatRoomContainer
             className={selected && 'chat-selected'}
-            onClick={()=>{ 
-                console.log(room)
+            onClick={()=>{
                 selectRoomToView(room)}
             }
         >

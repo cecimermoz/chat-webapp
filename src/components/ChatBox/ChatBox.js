@@ -2,6 +2,7 @@ import React from 'react';
 import { ChatBoxStyled, ChatBubble, TextStyled, TimeStyled } from './ChatBox.style';
 
 const ChatBox = (props) => {
+    
     const { text, time, img, isOwnerMsg } = props;
 
     return (

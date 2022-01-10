@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import ChatMenu from '../ChatMenu';
+import React from 'react';
 import ChatWindow from '../ChatWindow';
+import ChatMenu from '../ChatMenu';
 import { Container } from './WebAppContainer.style';
 
 const WebAppContainer = () => {

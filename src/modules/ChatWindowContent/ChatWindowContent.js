@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { ChatRoomsContext } from '../../models/ChatRoomsContext';
-import ChatBox from '../ChatBox';
+import ChatBox from '../../components/ChatBox';
 import { ChatBoxesContainer } from './ChatWindowContent.style';
 
 const ChatWindowContent = () => {
+    
     const { selectedRoom, selectedRoomMsgs } = useContext(ChatRoomsContext)
-    const {GUEST_IMAGE, IMAGE} = selectedRoom;
+    const { GUEST_IMAGE, IMAGE } = selectedRoom;
 
     return (
         <ChatBoxesContainer>

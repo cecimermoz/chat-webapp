@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import { ChatRoomsContext } from '../../models/ChatRoomsContext';
-import ChatForm from '../ChatForm';
+import React from 'react';
+import ChatForm from '../../components/ChatForm';
+import ChatWindowHeader from '../../components/ChatWindowHeader';
 import ChatWindowContent from '../ChatWindowContent';
-import ChatWindowHeader from '../ChatWindowHeader';
 import { ChatWindowContainer } from './ChatWindow.style';
 
 const ChatWindow = () => {    
