@@ -6,8 +6,8 @@ const ChatRoomContainer = styled.a`
     display: flex;
     align-items: center;
     border-right: 3px solid transparent;
-    min-height: 83px;
     color: rgba(255,255,255,0.5);
+    min-height: 86px;
     border-bottom: 2px solid rgba(255,255,255,0.4);
     &.chat-selected,
     &:hover{
@@ -45,6 +45,7 @@ const OwnerNameStyled = styled.p`
     color: #fff;
     font-weight: 600;
     font-size: 12px;
+    margin: 6px 0 0 0;
     @media (max-width: 600px) {
         display: none;
     }
@@ -53,6 +54,7 @@ const LastMsgStyled = styled.p`
     font-size: 10px;
     padding-right: 16px;
     line-height: 14px;
+    margin-top: 5px;
     color: rgba(255,255,255,0.5);
     @media (max-width: 650px) {
         display: none;

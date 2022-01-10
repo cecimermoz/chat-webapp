@@ -49,11 +49,15 @@ const BtnStyled = styled.button`
     @media (max-width: 500px) {
         flex: unset;
         width: auto;
+        padding: 10px 12px;
+        border-radius: 100%;
+        font-size: 10px;
         > .btnText {
             display: none;
         }
         > .icon {
             display: block;
+            font-size: 16px;
         }
     }
 `;
