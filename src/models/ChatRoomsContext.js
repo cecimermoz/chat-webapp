@@ -38,6 +38,7 @@ export const Context = ({children}) => {
             "TEXT": msg, 
         }
         setSelectedRoomMsgs([...selectedRoomMsgs, newMsg]);
+        FETCHED_DATA.CHAT_ROOMS.find( fetchRoom => fetchRoom.OWNER_ID === selectedRoom.OWNER_ID).MESSAGES.push(newMsg)
     }
 
     const createNewRoom = (msg) => {
@@ -51,6 +52,7 @@ export const Context = ({children}) => {
             "MESSAGES": []
         }
         setRooms([...rooms, newRoom]);
+        FETCHED_DATA.CHAT_ROOMS.push(newRoom)
         selectRoomToView(newRoom)
     }
 
