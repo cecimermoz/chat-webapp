@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { ChatRoomsContext } from '../../models/ChatRoomsContext';
 import ChatBox from '../../components/ChatBox';
 import { ChatBoxesContainer } from './ChatWindowContent.style';
 
 const ChatWindowContent = () => {
     
-    const { selectedRoom, selectedRoomMsgs } = useContext(ChatRoomsContext)
+    const { selectedRoom, selectedRoomMsgs, chatContainerRef } = useContext(ChatRoomsContext)
     const { GUEST_IMAGE, IMAGE } = selectedRoom;
 
     return (
-        <ChatBoxesContainer>
+        <ChatBoxesContainer ref={chatContainerRef}>
             {
                 selectedRoomMsgs?.map( msg => {
                     let isOwnerMsg = msg.IS_OWNER_MSG;

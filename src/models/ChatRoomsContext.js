@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect} from 'react';
+import React, { useState, createContext, useEffect, useRef} from 'react';
 import { FETCHED_DATA } from './sessionChats';
 import owner4 from "../assets/owner-4.png";
 export const ChatRoomsContext = createContext(FETCHED_DATA.CHAT_ROOMS);
@@ -8,6 +8,7 @@ export const Context = ({children}) => {
     const [selectedRoom, setSelectedRoom] = useState(FETCHED_DATA.CHAT_ROOMS[1]);
     const [selectedRoomMsgs, setSelectedRoomMsgs] = useState(FETCHED_DATA.CHAT_ROOMS[1].MESSAGES);
     const [owner, setOwner] = useState(null)
+    const chatContainerRef = useRef();
 
     const generateID = (type) => `${type}${Math.random().toString(36).substring(2, 9)}`;
     
@@ -23,12 +24,19 @@ export const Context = ({children}) => {
         .catch(er => console.error(er));
     }
 
+    const getScroll = () => {
+        let msgs = chatContainerRef.current.children;
+        let lastMsg = msgs[msgs.length-1];
+        lastMsg.scrollIntoView(false)
+    }
+
     const selectRoomToView = (room) => {
         setSelectedRoom(room);
         setSelectedRoomMsgs(room.MESSAGES)
     }
 
     const writeNerMsg = (msg) => {
+        if(msg === '') return;
         let newMsg = {
             "ID": generateID('msg_'), 
             "TIME": getTime(), 
@@ -37,6 +45,7 @@ export const Context = ({children}) => {
         }
         setSelectedRoomMsgs([...selectedRoomMsgs, newMsg]);
         FETCHED_DATA.CHAT_ROOMS.find( fetchRoom => fetchRoom.OWNER_ID === selectedRoom.OWNER_ID).MESSAGES.push(newMsg)
+        getScroll();
     }
 
     const createNewRoom = (msg) => {
@@ -59,6 +68,8 @@ export const Context = ({children}) => {
     }, [])
 
     const values = {
+        chatContainerRef,
+        getScroll,
         rooms,
         setRooms,
         selectedRoom,
