@@ -3,10 +3,13 @@ import { ChatBoxStyled, ChatBubble, TextStyled, TimeStyled } from './ChatBox.sty
 
 const ChatBox = (props) => {
     
-    const { text, time, img, isOwnerMsg } = props;
-
+    const { text, time, img, isOwnerMsg, isTheLastElement } = props;
+    
     return (
-        <ChatBoxStyled isOwnerMsg={isOwnerMsg}>
+        <ChatBoxStyled 
+            id={isTheLastElement && 'scroll-target'}
+            isOwnerMsg={isOwnerMsg}
+        >
             <img src={img} alt="message's sender" />
             <ChatBubble isOwnerMsg={isOwnerMsg}>
                 <TimeStyled isOwnerMsg={isOwnerMsg}>{time}</TimeStyled>

@@ -10,20 +10,23 @@ const ChatWindowContent = () => {
 
     return (
         <ChatBoxesContainer ref={chatContainerRef}>
-            {
-                selectedRoomMsgs?.map( msg => {
-                    let isOwnerMsg = msg.IS_OWNER_MSG;
-                    let dinamicPic = isOwnerMsg ? IMAGE : GUEST_IMAGE;
-
-                    return  <ChatBox 
-                                key={msg.ID}
-                                text={msg.TEXT}
-                                time={msg.TIME}
-                                img={dinamicPic}
-                                isOwnerMsg={isOwnerMsg}
-                            />
-                })
-            }
+        {
+            selectedRoomMsgs?.map( (msg, index, arr) => {
+                let isOwnerMsg = msg.IS_OWNER_MSG;
+                let dinamicPic = isOwnerMsg ? IMAGE : GUEST_IMAGE;
+                let lastElementInTheArray = arr.length - 1;
+                let isTheLastElement = index === lastElementInTheArray;
+                
+                return  <ChatBox 
+                            key={msg.ID}
+                            text={msg.TEXT}
+                            time={msg.TIME}
+                            img={dinamicPic}
+                            isOwnerMsg={isOwnerMsg}
+                            isTheLastElement={isTheLastElement}
+                        />
+            })
+        }
         </ChatBoxesContainer>
     );
 }
