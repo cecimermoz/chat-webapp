@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/loremLogo.svg';
 import { ChatMenuHeaderStyled, MenuHeaderImg } from './ChatMenuHeader.style';
 
 const ChatMenuHeader = () => {
