@@ -28,8 +28,6 @@ const ChatMenu = () => {
                             msgTime={isNewRoom ? '' : lastMsg.TIME}
                             selected={isTheSelectedOne}
                             selectRoomToView={selectRoomToView}
-
-                            selectedRoom={selectedRoom}
                         />
                     })
                 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatForm from '../../components/ChatForm';
 import ChatWindowHeader from '../../components/ChatWindowHeader';
-import ChatWindowContent from '../ChatWindowContent';
+import ChatWindowContent from '../../components/ChatWindowContent';
 import { ChatWindowContainer } from './ChatWindow.style';
 
 const ChatWindow = () => {    

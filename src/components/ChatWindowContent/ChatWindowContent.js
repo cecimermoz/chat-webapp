@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react';
 import { ChatRoomsContext } from '../../models/ChatRoomsContext';
-import ChatBox from '../../components/ChatBox';
+import ChatBox from '../ChatBox';
 import { ChatBoxesContainer } from './ChatWindowContent.style';
 
 const ChatWindowContent = () => {
