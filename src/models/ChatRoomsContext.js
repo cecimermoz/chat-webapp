@@ -8,12 +8,13 @@ export const Context = ({children}) => {
     const [selectedRoom, setSelectedRoom] = useState(FETCHED_DATA.CHAT_ROOMS[1]);
     const [selectedRoomMsgs, setSelectedRoomMsgs] = useState(FETCHED_DATA.CHAT_ROOMS[1].MESSAGES);
     const [owner, setOwner] = useState(null)
+    const [lastMsgOrder, setLastMsgOrder] = useState(0)
     const chatContainerRef = useRef();
 
     const generateID = (type) => `${type}${Math.random().toString(36).substring(2, 9)}`;
     
     const getTime = () => {
-        let now = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        const now = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         return now;
     }
 
@@ -25,8 +26,8 @@ export const Context = ({children}) => {
     }
 
     const getScroll = () => {
-        let msgs = chatContainerRef.current.children;
-        let lastMsg = msgs[msgs.length-1];
+        const msgs = chatContainerRef.current.children;
+        const lastMsg = msgs[msgs.length-1];
         lastMsg.scrollIntoView(false)
     }
 
@@ -37,7 +38,7 @@ export const Context = ({children}) => {
 
     const writeNerMsg = (msg) => {
         if(msg === '') return;
-        let newMsg = {
+        const newMsg = {
             "ID": generateID('msg_'), 
             "TIME": getTime(), 
             "IS_OWNER_MSG": false,
@@ -46,12 +47,26 @@ export const Context = ({children}) => {
         setSelectedRoomMsgs([...selectedRoomMsgs, newMsg]);
         FETCHED_DATA.CHAT_ROOMS.find( fetchRoom => fetchRoom.OWNER_ID === selectedRoom.OWNER_ID).MESSAGES.push(newMsg)
         getScroll();
+        updateRoomPosition();
+    }
+
+    const updateRoomPosition = () => {
+        setLastMsgOrder(lastMsgOrder - 1);
+        const updatedRoom = {
+            ...selectedRoom,
+            ORDER: lastMsgOrder
+        }
+        const otherRooms = rooms.filter(room => room.OWNER_ID !== updatedRoom.OWNER_ID)
+        setSelectedRoom(updatedRoom)
+        setRooms([updatedRoom, ...otherRooms])
     }
 
     const createNewRoom = (msg) => {
         generateOwner();
+        setLastMsgOrder(lastMsgOrder - 1);
         let newRoom = {
             "OWNER_ID": generateID('ow_'),
+            "ORDER": lastMsgOrder,
             "NAME": `${owner.name.first} ${owner.name.last}`, 
             "AREA": "Co-Worker", // Didn't find any entry in the data that applys for this
             "IMAGE": owner.picture.medium,
@@ -86,3 +101,4 @@ export const Context = ({children}) => {
         </ChatRoomsContext.Provider>
     )
 }
+

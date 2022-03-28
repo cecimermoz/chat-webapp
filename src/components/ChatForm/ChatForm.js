@@ -9,7 +9,7 @@ const ChatForm = () => {
     const handleChange = (e) => {
         setMsg(e.target.value)
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         writeNerMsg(msg)

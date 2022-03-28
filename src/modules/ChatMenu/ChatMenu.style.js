@@ -12,6 +12,8 @@ const ChatMenuContainer = styled.div`
 
 const ChatRoomsContainer = styled.div`
     overflow: auto;
+    display: flex;
+    flex-direction: column;
 `;
 
 export { ChatMenuContainer, ChatRoomsContainer };

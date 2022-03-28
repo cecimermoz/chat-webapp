@@ -14,20 +14,23 @@ const ChatMenu = () => {
             <ChatRoomsContainer>
                 {
                     rooms?.map( (room,i) => {
-                        let { NAME, IMAGE, MESSAGES } = room;
-                            let isNewRoom = (MESSAGES.length <= 0);
-                            let isTheSelectedOne = selectedRoom.OWNER_ID === room.OWNER_ID;
-                            let lastMsg = !isNewRoom && MESSAGES[MESSAGES.length - 1];             
-                            return <ChatRoom
-                                key={`chat-room-num-${i}`}
-                                room={room}
-                                ownerImg={IMAGE}
-                                ownerName={NAME}
-                                lastMsg={isNewRoom ? '' : lastMsg.TEXT}
-                                msgTime={isNewRoom ? '' : lastMsg.TIME}
-                                selected={isTheSelectedOne}
-                                selectRoomToView={selectRoomToView}
-                            />
+                        const { NAME, IMAGE, MESSAGES } = room;
+                        const isNewRoom = (MESSAGES.length <= 0);
+                        const isTheSelectedOne = selectedRoom.OWNER_ID === room.OWNER_ID;
+                        const lastMsg = !isNewRoom && MESSAGES[MESSAGES.length - 1];             
+                        return <ChatRoom
+                            order={room.ORDER}
+                            key={`chat-room-num-${i}`}
+                            room={room}
+                            ownerImg={IMAGE}
+                            ownerName={NAME}
+                            lastMsg={isNewRoom ? '' : lastMsg.TEXT}
+                            msgTime={isNewRoom ? '' : lastMsg.TIME}
+                            selected={isTheSelectedOne}
+                            selectRoomToView={selectRoomToView}
+
+                            selectedRoom={selectedRoom}
+                        />
                     })
                 }
             </ChatRoomsContainer>

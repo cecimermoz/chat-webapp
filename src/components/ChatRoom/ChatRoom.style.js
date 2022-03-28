@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ChatRoomContainer = styled.a`
+    order: ${props => props.order};
     cursor: pointer;
     padding: 10px 5px 10px 15px;
     display: flex;

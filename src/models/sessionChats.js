@@ -8,6 +8,7 @@ export const FETCHED_DATA = {
     "CHAT_ROOMS": [
         {
             "OWNER_ID": "ow1",
+            "ORDER": 0,
             "NAME": "Luciana Gutierrez", 
             "AREA": "Human Resources", 
             "IMAGE": owner1,
@@ -29,6 +30,7 @@ export const FETCHED_DATA = {
         },
         {
             "OWNER_ID": "ow2",
+            "ORDER": 0,
             "NAME": "Micaela Alvarez", 
             "AREA": "Marketing Manager", 
             "IMAGE": owner2,
@@ -56,6 +58,7 @@ export const FETCHED_DATA = {
         },
         {
             "OWNER_ID": "ow3",
+            "ORDER": 0,
             "NAME": "Manuel Hoffmann", 
             "AREA": "Business Analyst", 
             "IMAGE": owner3,

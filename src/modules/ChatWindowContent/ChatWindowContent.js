@@ -7,7 +7,6 @@ const ChatWindowContent = () => {
     
     const { selectedRoom, selectedRoomMsgs, chatContainerRef } = useContext(ChatRoomsContext)
     const { GUEST_IMAGE, IMAGE } = selectedRoom;
-
     return (
         <ChatBoxesContainer ref={chatContainerRef}>
         {
