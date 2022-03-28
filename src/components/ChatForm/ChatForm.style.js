@@ -48,6 +48,10 @@ const BtnStyled = styled.button`
     &:focus, &:active{
         outline: 2px solid #8c8c8c;
     }
+    &:disabled{
+        cursor: not-allowed;
+        color: #c5c5c5;
+    }
     > .icon {
         display: none;
     }

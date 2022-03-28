@@ -9,7 +9,7 @@ export const Context = ({children}) => {
     const [selectedRoomMsgs, setSelectedRoomMsgs] = useState(FETCHED_DATA.CHAT_ROOMS[1].MESSAGES);
     const [owner, setOwner] = useState(null)
     const [lastMsgOrder, setLastMsgOrder] = useState(0)
-    const chatContainerRef = useRef();
+    const chatContainerRef = useRef(selectedRoom);
 
     const generateID = (type) => `${type}${Math.random().toString(36).substring(2, 9)}`;
     
@@ -26,9 +26,9 @@ export const Context = ({children}) => {
     }
 
     const getScroll = () => {
-        const msgs = chatContainerRef.current.children;
-        const lastMsg = msgs[msgs.length-1];
-        lastMsg.scrollIntoView(false)
+        const msgs = chatContainerRef.current?.children;
+        const lastMsg = msgs.length > 0 ? msgs[msgs.length-1] : null;
+        lastMsg !== null && lastMsg.scrollIntoView(false)
     }
 
     const selectRoomToView = (room) => {
@@ -61,7 +61,7 @@ export const Context = ({children}) => {
         setRooms([updatedRoom, ...otherRooms])
     }
 
-    const createNewRoom = (msg) => {
+    const createNewRoom = () => {
         generateOwner();
         setLastMsgOrder(lastMsgOrder - 1);
         let newRoom = {

@@ -24,7 +24,7 @@ const ChatForm = () => {
                 onChange={handleChange}
                 value={msg}
             />
-            <BtnStyled type='submit'>
+            <BtnStyled type='submit' disabled={msg === ''}>
                 <span className="icon material-icons-outlined">send</span>
                 <span className="btnText">send</span>
             </BtnStyled> 

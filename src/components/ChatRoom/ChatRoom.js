@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChatRoomContainer, ChatRoomImg, ChatRoomInfo, LastMsgStyled, MsgTimeStyled, OwnerNameStyled } from './ChatRoom.style';
 
-const MAX_LENGTH_MSG = 75; // in characters
+const MAX_LENGTH_MSG = 65; // in characters
 
 const ChatRoom = (props) => {
     const { order, ownerImg, ownerName, lastMsg, msgTime, selected, selectRoomToView, room } = props;
