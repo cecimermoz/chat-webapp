@@ -8,11 +8,16 @@ const ChatFormStyled = styled.form`
     gap: 10px;
 `;
 
-const InputStyled = styled.input`
+const InputStyled = styled.textarea`
+    max-height: 40px;
+    resize: none;
+    line-height: 1;
+    overflow: auto;
     padding: 10px 20px;
     color: #808080;
     border-radius: 17px;
     flex: 5;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 500;
     border: 1px solid #e9e9e9;

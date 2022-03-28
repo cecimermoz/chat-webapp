@@ -7,7 +7,7 @@ const ChatBox = (props) => {
     
     return (
         <ChatBoxStyled 
-            id={isTheLastElement && 'scroll-target'}
+            id={isTheLastElement ? 'scroll-target' : ''}
             isOwnerMsg={isOwnerMsg}
         >
             <img src={img} alt="message's sender" />
