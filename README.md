@@ -21,8 +21,6 @@ Or check my [Linkdin](https://www.linkedin.com/in/ceciliamermoz/) for more detai
 
 ### Here I leave you a preview: 
 
-https://user-images.githubusercontent.com/42853540/148839494-e9b38551-e7cc-498c-95fe-525d2df2387f.mp4
 
 
-
-
+https://user-images.githubusercontent.com/98833586/160409815-0d8fc2ea-038a-4b8d-b8fe-d8b6a529e283.mp4
